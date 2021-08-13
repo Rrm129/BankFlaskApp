@@ -1,0 +1,26 @@
+{% extends "base-views.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <h1> Deposit Money</h1>
+    <br>
+    <form method="POST">
+
+        <div class="form-group form-deposit">
+            <h4 align="center">Deposit</h4>
+            <label for="amount">Amount to Deposit</label>
+            <input type="integer" class="form-control" id="amount" name="amount" placeholder="Enter amount" />
+    
+            <!-- <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" /> -->
+    
+            <br>
+            <button type="submit" class="btn btn-deposit-page">Submit</button>
+    
+        </div>
+    </form>
+    
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base-auth.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+
+    <div class="form-group form-signup">
+        <h4 align="center">Sign Up</h4>
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter e-mail" />
+
+        <label for="fullname">Full Name</label>
+        <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter Full name" />
+
+        <label for="password1">Password</label>
+        <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter password" />
+
+        <label for="password2">Password</label>
+        <input type="password" class="form-control" id="password2" name="password2" placeholder="Enter password" />
+
+        <br>
+        <button type="submit" class="btn btn-signup">Submit</button>
+
+    </div>
+</form>
+
+{% endblock %}

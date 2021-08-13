@@ -1,0 +1,23 @@
+{% extends "base-auth.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+
+    <div class="form-group form-login">
+        <h4 align="center">Login</h4>
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter e-mail" />
+
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" />
+
+        <br>
+        <button type="submit" class="btn btn-login">Submit</button>
+
+    </div>
+</form>
+
+{% endblock %}

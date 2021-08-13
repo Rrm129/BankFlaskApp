@@ -1,0 +1,40 @@
+.appear-front,
+.alert {
+  z-index: 4;
+  margin-bottom: 0;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* margin-top: 56px; */
+  /* overflow: auto; */
+}
+.form-login,
+.form-signup {
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 70px;
+  border: black;
+  border-width: 1px;
+  border-radius: 9px;
+  border-style: solid;
+  width: 70%;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label {
+  margin-top: 10px;
+}
+
+.btn-login,
+.btn-signup {
+  color: white;
+  background-color: #f47524;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}

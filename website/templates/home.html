@@ -1,0 +1,90 @@
+{% extends "base-views.html" %}
+
+{% block title %}Home{% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="main-content-space">
+    
+    <div class="blocks-space">
+        
+        <div class="column-1">
+            <div class="block-1">
+                <a href="#" class="line-link">
+                    <div class="row1">
+                        <div class="1a">
+                            <h7> Available Balance</h7>
+                        </div>
+                        <div class="1b">
+                            <h4 style="width: 100%;">R$ {{current_user.balance}}<i class="bi bi-chevron-right" style="float: right; padding-top:5px; font-size: small;"></i></h4>                        
+                        </div>
+                    </div>
+                </a>
+                <hr style="width: 90%; margin-left: auto; margin-right: auto;">
+                <a href="#" class="line-link">
+                    <div class="row2">
+                        <div class="2a">
+                            <h5>R$ 700,34 </h5> 
+                        </div>
+                    </div>
+                </a>
+
+                <hr style="width: 90%; margin-left: auto; margin-right: auto;">
+
+                <div class="row3">
+                    <div class="row3-elem">
+                        <a href="/deposit" class="line-link">
+                            <button class="btn btn-deposit">
+                                Deposit Money
+                            </button>
+                        </a>
+                    </div>
+                    <div class="row3-elem">
+                        <a href="/transfer" class="line-link">    
+                            <button class="btn btn-transfer">
+                                Transfer Money
+                            </button>
+                        </a>  
+                    </div>      
+                </div>
+                
+
+            </div>
+            <div class="block-2">
+                <div class="block2-header">Investments</div>
+                <hr class="hr-options" style="width: 100%;"> 
+
+            </div>
+        </div>
+        
+        <div class="column-2">
+            <div class="block-3">
+                <div class="block3-header">Your Activity</div>
+                <!-- <hr class="hr-options" style="width: 100%;"> -->
+                <div class="block3-search">
+                    <i class="bi bi-search"></i>
+                    <input class="input-search" type="text" placeholder="Search">
+                </div>
+                <ul class="list-group block3-transactions">
+                    
+                    {% for transaction in current_user.transactions %}
+                        <li class="list-group-item block3-transactions-list">
+                            {% if transaction.transaction_type == 'D' %}
+                            <div> Deposited {{transaction.amount}} to your Account</div><div>{{transaction.date}}</div>
+                            {% else %}
+                            <div>Sent {{transaction.amount}} to someone </div><div>{{transaction.date}}</div>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+                
+            
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

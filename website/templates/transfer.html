@@ -1,0 +1,26 @@
+{% extends "base-views.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <h1> Send Money</h1>
+    <br>
+    <form method="POST">
+
+        <div class="form-group form-transfer">
+            <h4 align="center">Transfer</h4>
+            <label for="amount">Amount to Send</label>
+            <input type="integer" class="form-control" id="amount" name="amount" placeholder="Enter amount" />
+    
+            <!-- <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" /> -->
+    
+            <br>
+            <button type="submit" class="btn btn-transfer-page">Submit</button>
+    
+        </div>
+    </form>
+    
+
+{% endblock %}
