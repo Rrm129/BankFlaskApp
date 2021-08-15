@@ -2,9 +2,6 @@
 
 {% block title %}Home{% endblock %}
 
-
-
-
 {% block content %}
 
 <div class="main-content-space">
@@ -19,7 +16,7 @@
                             <h7> Available Balance</h7>
                         </div>
                         <div class="1b">
-                            <h4 style="width: 100%;">R$ {{current_user.balance}}<i class="bi bi-chevron-right" style="float: right; padding-top:5px; font-size: small;"></i></h4>                        
+                            <h4 style="width: 100%;">R$ {{current_user.getBalance()}}<i class="bi bi-chevron-right" style="float: right; padding-top:5px; font-size: small;"></i></h4>                        
                         </div>
                     </div>
                 </a>
@@ -51,7 +48,6 @@
                     </div>      
                 </div>
                 
-
             </div>
             <div class="block-2">
                 <div class="block2-header">Investments</div>
@@ -69,19 +65,16 @@
                     <input class="input-search" type="text" placeholder="Search">
                 </div>
                 <ul class="list-group block3-transactions">
-                    
-                    {% for transaction in current_user.transactions %}
+                    {% for transaction in transaction_list %}
                         <li class="list-group-item block3-transactions-list">
                             {% if transaction.transaction_type == 'D' %}
-                            <div> Deposited {{transaction.amount}} to your Account</div><div>{{transaction.date}}</div>
+                            <div> Deposited  to your Account</div><div style="display: flex; flex-direction: column; align-items: flex-end;"><div>$ {{"{:,}".format(transaction.amount)}}</div><div style="font-size: 14px;color: #999;">{{transaction.getDate()}}</div></div>
                             {% else %}
-                            <div>Sent {{transaction.amount}} to someone </div><div>{{transaction.date}}</div>
+                            <div>Sent  to someone </div><div style="display: flex; flex-direction: column; align-items: flex-end;"><div>$ {{"{:,}".format(transaction.amount)}}</div><div style="font-size: 14px;color: #999;">{{transaction.getDate()}}</div></div>
                             {% endif %}
                         </li>
                     {% endfor %}
                 </ul>
-                
-            
             </div>
         </div>
     </div>

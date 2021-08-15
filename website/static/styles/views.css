@@ -1,3 +1,7 @@
+body {
+  font-weight: 500;
+}
+
 nav {
   font-weight: 600;
 }
@@ -283,8 +287,9 @@ label {
 }
 
 .block3-transactions-list {
-  padding: 20px 0 20px 20px;
+  padding: 10px 0 10px 20px;
   display: flex;
   justify-content: space-between;
   padding-right: 15px;
+  align-items: center;
 }

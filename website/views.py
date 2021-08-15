@@ -16,7 +16,13 @@ def start_app():
 @views.route('/home', methods=['GET', 'POST'])
 @login_required
 def home():
+    transaction_list= []
 
+    for transaction in current_user.transactions:
+        transaction_list.append(transaction)
+    # current_user.transactions.reverse()
+    # print(current_user.transactions)
+    transaction_list.reverse()
     # if request.method == 'POST':
     #     note = request.form.get('note')
 
@@ -28,7 +34,7 @@ def home():
     #         db.session.commit()
     #         flash('Note added', category='success')
 
-    return render_template("home.html", user=current_user)
+    return render_template("home.html", user=current_user, transaction_list=transaction_list)
 
 
 @views.route('/deposit', methods=['GET', 'POST'])
